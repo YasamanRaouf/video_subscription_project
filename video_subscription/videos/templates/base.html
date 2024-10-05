@@ -1,0 +1,30 @@
+<!-- templates/base.html -->
+{% load static %}  <!-- اضافه کردن این خط برای بارگذاری تگ static -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Video Subscription{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- لینک به فایل CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'video_list' %}">Videos</a></li>
+                <li><a href="{% url 'subscription' %}">Subscription</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Video Subscription Project</p>
+    </footer>
+</body>
+</html>

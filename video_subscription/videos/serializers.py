@@ -1,6 +1,5 @@
-# videos/serializers.py
 from rest_framework import serializers
-from .models import Video, Subscription, Payment, History, SubscriptionVideo
+from .models import Video, Subscription, Payment, History
 
 class VideoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,9 +19,4 @@ class PaymentSerializer(serializers.ModelSerializer):
 class HistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = History
-        fields = '__all__'
-
-class SubscriptionVideoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SubscriptionVideo
         fields = '__all__'

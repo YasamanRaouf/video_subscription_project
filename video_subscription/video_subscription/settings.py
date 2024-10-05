@@ -53,11 +53,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'video_subscription.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],  # مسیر به پوشه templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +68,17 @@ TEMPLATES = [
         },
     },
 ]
+
+# URL برای فایل‌های استاتیک
+STATIC_URL = '/static/'
+
+# مسیر دایرکتوری فایل‌های استاتیک
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # اشاره به پوشه static در مسیر پروژه
+]
+
+# اگر از STATIC_ROOT برای جمع‌آوری فایل‌های استاتیک استفاده می‌کنید
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # معمولاً برای تولید (Production)
 
 WSGI_APPLICATION = 'video_subscription.wsgi.application'
 

@@ -8,7 +8,9 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('videos.urls')),
+    path('', include('videos.urls')),  # وارد کردن مسیرهای اپلیکیشن videos
     re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
+
+# مسیر فایل‌های استاتیک
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
