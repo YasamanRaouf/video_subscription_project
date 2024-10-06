@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}ایجاد ویدئو{% endblock %}
+
+{% block content %}
+<h1>ایجاد ویدئو</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ایجاد ویدئو</button>
+</form>
+<a href="{% url 'video_list' %}">بازگشت به لیست ویدئوها</a>
+{% endblock %}

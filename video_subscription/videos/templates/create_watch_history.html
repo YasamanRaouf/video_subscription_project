@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}ایجاد تاریخچه تماشا{% endblock %}
+
+{% block content %}
+<h1>ایجاد تاریخچه تماشا</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ایجاد تاریخچه تماشا</button>
+</form>
+<a href="{% url 'watch_history_list' %}">بازگشت به لیست تاریخچه تماشا</a>
+{% endblock %}

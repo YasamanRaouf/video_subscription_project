@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User  # برای استفاده از مدل کاربر
+from django.utils import timezone
 
 class Video(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    upload_date = models.DateTimeField(auto_now_add=True)
-    video_url = models.URLField()
+    upload_date = models.DateTimeField(default=timezone.now, editable=False)
+    url = models.URLField()
+    thumbnail = models.ImageField(upload_to='thumbnails/') 
 
 class Subscription(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)  # مدل User از django.contrib.auth.models
